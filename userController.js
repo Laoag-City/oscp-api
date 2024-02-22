@@ -1,11 +1,14 @@
 const User = require('./userModel');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
+const secretKey = process.env.JWT_SECRET;
 
 exports.register = async (req, res) => {
   try {
     const user = new User(req.body);
     await user.save();
-    const token = jwt.sign({ _id: user._id.toString() }, 'your_jwt_secret');
+    const token = jwt.sign({ _id: user._id.toString() }, secretKey);
     res.status(201).send({ user, token });
   } catch (error) {
     res.status(400).send(error);
@@ -18,7 +21,7 @@ exports.login = async (req, res) => {
     if (!user || !(await user.comparePassword(req.body.password))) {
       return res.status(401).send({ error: 'Login failed!' });
     }
-    const token = jwt.sign({ _id: user._id.toString() }, 'your_jwt_secret');
+    const token = jwt.sign({ _id: user._id.toString() }, secretKey);
     res.send({ user, token });
   } catch (error) {
     res.status(400).send(error);

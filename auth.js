@@ -1,13 +1,17 @@
 const jwt = require('jsonwebtoken');
 const User = require('./userModel');
 
+require('dotenv').config();
+
 const auth = async (req, res, next) => {
   try {
     const token = req.header('Authorization').replace('Bearer ', '');
-    const decoded = jwt.verify(token, 'your_jwt_secret');
-    const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findOne({ _id: decoded._id});
+    //const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
+    //console.log(decoded._id)
 
-    if (!user) {
+     if (!user) {
       throw new Error();
     }
 

@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 const applicationController = require('./applicationController');
 const auth = require('./auth');
 const userController = require('./userController')
+require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+
+const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 
@@ -28,7 +30,7 @@ app.post('/applications', applicationController.createApplication);
 //app.get('/applications', applicationController.getApplications);
 
 // Example of a protected route
-app.get('/applications', auth, applicationController.getApplications);
+app.get('/applications',auth, applicationController.getApplications);
 app.get('/applications/:id', applicationController.getApplicationById);
 app.put('/applications/:id', applicationController.updateApplication);
 app.delete('/applications/:id', applicationController.deleteApplication);
