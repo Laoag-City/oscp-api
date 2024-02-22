@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,14 +8,17 @@ const userController = require('./userController')
 require('dotenv').config();
 
 const app = express();
+app.use(cors())
 
 const port = process.env.PORT || 3001;
+//const MONGO_URI = '';
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/oscp', {
+mongoose.connect(process.env.MONGO_URI_DEV, {
 })
 .then(()=>{
+  console.log(process.env.NODE_ENV);
   console.log('Connected to MongoDB');
 })
 .catch((err)=>{

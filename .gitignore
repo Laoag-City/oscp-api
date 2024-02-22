@@ -1,3 +1,4 @@
 /.devcontainer
 /.github
+/.env
 /node_modules
