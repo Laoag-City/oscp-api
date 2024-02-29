@@ -11,56 +11,56 @@ db.getCollection('users').insertMany([
   {
     username: 'kechie',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpadmin',
+    userrole: 'oscpadmin',
   },
   {
     username: 'oscpcmo',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpadmin',
+    userrole: 'oscpcmo',
   },
   {
     username: 'oscpzoning',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpadmin',
+    userrole: 'oscpadmin',
   },
   {
     username: 'oscpbfp',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscbfp',
+    userrole: 'oscbfp',
   },
   {
     username: 'oscpassessor',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpassessor',
+    userrole: 'oscpassessor',
   },
   {
     username: 'oscplng',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscplindandgrade',
+    userrole: 'oscplindandgrade',
   },
   {
     username: 'oscpstructural',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpstructural',
+    userrole: 'oscpstructural',
   },
   {
     username: 'oscparchitectural',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscparchitectural',
+    userrole: 'oscparchitectural',
   },
   {
     username: 'oscpelectrical',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpelectrical',
+    userrole: 'oscpelectrical',
   },
   {
     username: 'oscpsanitary',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpsanitary',
+    userrole: 'oscpsanitary',
   },
   {
     username: 'oscpmechanical',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userRole: 'oscpmechanical',
+    userrole: 'oscpmechanical',
   }
 ]);

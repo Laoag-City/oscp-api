@@ -22,7 +22,8 @@ exports.login = async (req, res) => {
       return res.status(401).send({ error: 'Login failed!' });
     }
     const token = jwt.sign({ _id: user._id.toString() }, secretKey);
-    res.send({ user, token });
+    //res.send({ user, token });
+    res.send({ username:user.username, userrole:user.userrole, token });
   } catch (error) {
     res.status(400).send(error);
   }
