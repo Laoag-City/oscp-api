@@ -13,7 +13,7 @@
 use('oscp');
 
 // Insert a few documents into the sales collection.
-db.getCollection('applications').insertMany(
+db.getCollection('oscpapplications').insertMany(
   [
     {
       "owner": "Owner I",

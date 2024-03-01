@@ -51,7 +51,7 @@ const OSCPApplicationSchema = new mongoose.Schema({
       remarks: String,
     },
   ]
-});
+},{collection: 'oscpapplications'});
 /* const ApplicationSchema = new mongoose.Schema({
   owner: String,
   title: String,
@@ -59,4 +59,4 @@ const OSCPApplicationSchema = new mongoose.Schema({
   signatories: [{ name: String }]
 });
 */
-module.exports = mongoose.model('OSCPApplication', OSCPApplicationSchema);
+module.exports = mongoose.model('OSCPApplications', OSCPApplicationSchema);
