@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ApplicationSchema = new mongoose.Schema({
+const OSCPApplicationSchema = new mongoose.Schema({
   owner: String,
   title: String,
   dateApplied: Date,
@@ -59,4 +59,4 @@ const ApplicationSchema = new mongoose.Schema({
   signatories: [{ name: String }]
 });
 */
-module.exports = mongoose.model('Application', ApplicationSchema);
+module.exports = mongoose.model('OSCPApplication', OSCPApplicationSchema);

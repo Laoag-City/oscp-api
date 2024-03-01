@@ -1,25 +1,25 @@
-const Application = require('./applicationModel');
+const OSCPApplication = require('../models/OSCPApplicationModel');
 
-exports.createApplication = async (req, res) => {
+exports.createOSCPApplication = async (req, res) => {
   try {
-    const application = new Application(req.body);
-    await application.save();
-    res.status(201).send(application);
+    const oscpapplication = new OSCPApplication(req.body);
+    await oscpapplication.save();
+    res.status(201).send(oscpapplication);
   } catch (error) {
     res.status(400).send(error);
   }
 };
 
-exports.getApplications = async (req, res) => {
+exports.getOSCPApplications = async (req, res) => {
   try {
     const applications = await Application.find({});
     res.status(200).send(applications);
   } catch (error) {
-    res.status(500).send({error: 'Failed to getch applications'});
+    res.status(500).send({error: 'Failed to getch OSCP applications'});
   }
 };
 
-exports.getApplicationById = async (req, res) => {
+exports.getOSCPApplicationById = async (req, res) => {
   try {
     const application = await Application.findById(req.params.id);
     if (!application) {
@@ -31,7 +31,7 @@ exports.getApplicationById = async (req, res) => {
   }
 };
 
-exports.updateApplication = async (req, res) => {
+exports.updateOSCPApplication = async (req, res) => {
   try {
     const application = await Application.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!application) {
@@ -43,7 +43,7 @@ exports.updateApplication = async (req, res) => {
   }
 };
 
-exports.deleteApplication = async (req, res) => {
+exports.deleteOSCPApplication = async (req, res) => {
   try {
     const application = await Application.findByIdAndDelete(req.params.id);
     if (!application) {

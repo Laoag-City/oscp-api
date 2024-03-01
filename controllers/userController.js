@@ -1,10 +1,11 @@
-const User = require('./userModel');
+const User = require('../models/userModel');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const secretKey = process.env.JWT_SECRET;
 
 exports.register = async (req, res) => {
+  //console.log(req.body);
   try {
     const user = new User(req.body);
     await user.save();

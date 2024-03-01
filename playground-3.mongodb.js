@@ -21,7 +21,7 @@ db.getCollection('users').insertMany([
   {
     username: 'oscpzoning',
     password: '$2a$08$8g/.DFmReWOtKxE0b4OvneXn5PXttd94GjtS7nJCRl7M4QeNZQoEe',
-    userrole: 'oscpadmin',
+    userrole: 'oscpzoning',
   },
   {
     username: 'oscpbfp',
