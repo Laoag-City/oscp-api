@@ -4,7 +4,7 @@ const OSCPApplicationSchema = new mongoose.Schema({
   owner: String,
   title: String,
   dateApplied: Date,
-  conversionStatus: String,
+  conversionStatus: Boolean,
   ownerName: String,
   applicationTitle: String,
   conversionSignatories: [

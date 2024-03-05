@@ -16,12 +16,12 @@ use('oscp');
 db.getCollection('oscpapplications').insertMany(
   [
     {
-      "owner": "Owner I",
+      "owner": "Corporation I",
       "title": "Title 7",
       "dateApplied": "2023-03-01",
       "conversionStatus": "Approved",
-      "ownerName": "Julia",
-      "applicationTitle": "App 7",
+      "ownerName": "Julia Nacino",
+      "applicationTitle": "Construction of 3 Storey Residential House in",
       "conversionSignatories": [
         {
           "signatory": "CSignatory 3",
