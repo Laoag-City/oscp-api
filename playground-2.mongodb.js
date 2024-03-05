@@ -17,70 +17,102 @@ db.getCollection('oscpapplications').insertMany(
   [
     {
       "owner": "Corporation I",
-      "title": "Title 7",
-      "dateApplied": "2023-03-01",
+      "title": "Fence Construction",
+      "dateApplied": "2024-03-01",
       "conversionStatus": "Approved",
+      "cPermitStatus": true,
       "ownerName": "Julia Nacino",
       "applicationTitle": "Construction of 3 Storey Residential House in",
       "conversionSignatories": [
         {
-          "signatory": "CSignatory 3",
-          "status": "Rejected",
-          "remarks": "Documents missing",
-          "signDate": "2023-10-31"
+          "signatory": "Zoning",
+          "status": null,
+          "remarks": null,
+          "signDate": "2024-03-02"
+        },
+        {
+          "signatory": "BFP",
+          "status": "Approved",
+          "remarks": null,
+          "signDate": "2024-03-02"
+        },
+        {
+          "signatory": "Assessor",
+          "status": "Approved",
+          "remarks": null,
+          "signDate": "2024-03-02"
         }
       ],
       "constructionPermitSignatories": [
         {
-          "signatory": "CPSignatory 1",
+          "signatory": "Electrical",
           "status": "Pending",
-          "remarks": "Awaiting final approval",
+          "remarks": null,
           "signDate": null
         }
       ]
     },
     {
-      "owner": "Owner G",
+      "owner": "Ms Owner 2",
       "title": "Title 10",
-      "dateApplied": "2022-04-11",
-      "conversionStatus": "Approved",
+      "dateApplied": "2024-03-02",
+      "conversionStatus": true,
+      "cPermitStatus": false,
       "ownerName": "Hannah",
-      "applicationTitle": "App 8",
+      "applicationTitle": "Construction of 3 Storey Residential House in Brgy 29",
       "conversionSignatories": [
         {
-          "signatory": "CSignatory 1",
-          "status": "Pending",
-          "remarks": "Needs review",
-          "signDate": null
+          "signatory": "Zoning",
+          "status": null,
+          "remarks": null,
+          "signDate": "2024-03-02"
         },
         {
-          "signatory": "CSignatory 3",
-          "status": "Rejected",
-          "remarks": "Documents missing",
-          "signDate": "2023-10-31"
-        },
-        {
-          "signatory": "CSignatory 2",
+          "signatory": "BFP",
           "status": "Approved",
-          "remarks": "All clear",
-          "signDate": null
+          "remarks": null,
+          "signDate": "2024-03-02"
+        },
+        {
+          "signatory": "Assessor",
+          "status": "Approved",
+          "remarks": null,
+          "signDate": "2024-03-02"
         }
       ],
       "constructionPermitSignatories": [
         {
-          "signatory": "CPSignatory 3",
+          "signatory": "Line and Grade",
           "status": "Rejected",
           "remarks": "Non-compliant with regulations",
           "signDate": null
         },
         {
-          "signatory": "CPSignatory 1",
+          "signatory": "Structural",
           "status": "Pending",
           "remarks": "Awaiting final approval",
           "signDate": null
         },
         {
-          "signatory": "CPSignatory 2",
+          "signatory": "Architectural",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Electrical",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Sanitary",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Mechanical",
           "status": "Approved",
           "remarks": "Permit granted",
           "signDate": null
@@ -88,41 +120,65 @@ db.getCollection('oscpapplications').insertMany(
       ]
     },
     {
-      "owner": "Owner J",
-      "title": "Title 6",
-      "dateApplied": "2020-12-16",
-      "conversionStatus": "Rejected",
-      "ownerName": "George",
-      "applicationTitle": "App 6",
+      "owner": "Owner 3",
+      "title": "Title 3",
+      "dateApplied": "2024-03-4",
+      "conversionStatus": true,
+      "ownerName": "George 3",
+      "applicationTitle": "Fence Construction",
       "conversionSignatories": [
         {
-          "signatory": "CSignatory 3",
-          "status": "Rejected",
-          "remarks": "Documents missing",
-          "signDate": "2023-10-31"
+          "signatory": "Zoning",
+          "status": null,
+          "remarks": null,
+          "signDate": "2024-03-02"
         },
         {
-          "signatory": "CSignatory 2",
+          "signatory": "BFP",
           "status": "Approved",
-          "remarks": "All clear",
-          "signDate": null
+          "remarks": null,
+          "signDate": "2024-03-02"
         },
         {
-          "signatory": "CSignatory 1",
-          "status": "Pending",
-          "remarks": "Needs review",
-          "signDate": null
+          "signatory": "Assessor",
+          "status": "Approved",
+          "remarks": null,
+          "signDate": "2024-03-02"
         }
       ],
       "constructionPermitSignatories": [
         {
-          "signatory": "CPSignatory 3",
+          "signatory": "Line and Grade",
           "status": "Rejected",
           "remarks": "Non-compliant with regulations",
           "signDate": null
         },
         {
-          "signatory": "CPSignatory 2",
+          "signatory": "Structural",
+          "status": "Pending",
+          "remarks": "Awaiting final approval",
+          "signDate": null
+        },
+        {
+          "signatory": "Architectural",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Electrical",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Sanitary",
+          "status": "Approved",
+          "remarks": "Permit granted",
+          "signDate": null
+        },
+        {
+          "signatory": "Mechanical",
           "status": "Approved",
           "remarks": "Permit granted",
           "signDate": null
@@ -130,22 +186,23 @@ db.getCollection('oscpapplications').insertMany(
       ]
     }
   ]
-);
-
-// Run a find command to view items sold on April 4th, 2014.
-//const salesOnApril4th = db.getCollection('sales').find({
-//  date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
-//}).count();
-
-// Print a message to the output window.
-//console.log(`${salesOnApril4th} sales occurred in 2014.`);
-
-// Here we run an aggregation and open a cursor to the results.
-// Use '.toArray()' to exhaust the cursor to return the whole result set.
-// You can use '.hasNext()/.next()' to iterate through the cursor page by page.
-//db.getCollection('sales').aggregate([
+  );
+  
+  // Run a find command to view items sold on April 4th, 2014.
+  //const salesOnApril4th = db.getCollection('sales').find({
+  //  date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
+  //}).count();
+  
+  // Print a message to the output window.
+  //console.log(`${salesOnApril4th} sales occurred in 2014.`);
+  
+  // Here we run an aggregation and open a cursor to the results.
+  // Use '.toArray()' to exhaust the cursor to return the whole result set.
+  // You can use '.hasNext()/.next()' to iterate through the cursor page by page.
+  //db.getCollection('sales').aggregate([
   // Find all of the sales that occurred in 2014.
-//  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+  //  { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
   // Group the total sales for each product.
-//  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
-//]);
+  //  { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+  //]);
+  

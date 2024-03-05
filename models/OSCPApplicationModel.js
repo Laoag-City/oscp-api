@@ -5,6 +5,7 @@ const OSCPApplicationSchema = new mongoose.Schema({
   title: String,
   dateApplied: Date,
   conversionStatus: Boolean,
+  cPermitStatus: Boolean,
   ownerName: String,
   applicationTitle: String,
   conversionSignatories: [
