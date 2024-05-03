@@ -20,7 +20,8 @@ exports.login = async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user || !(await user.comparePassword(req.body.password))) {
-      return res.status(401).send({ error: 'Login failed!' });
+      //return res.status(401).send({ error: 'Login failed!' });
+      return res.status(401).json({ message: 'Incorrect username or password' });
     }
     const token = jwt.sign({ _id: user._id, username:user.username }, secretKey);
     res.send({ _id:user._id, username:user.username, userrole:user.userrole, token });
