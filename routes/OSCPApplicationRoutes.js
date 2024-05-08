@@ -5,12 +5,14 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 router.post('/', authMiddleware, OSCPApplicationController.createOSCPApplication);
 router.get('/', authMiddleware, OSCPApplicationController.getOSCPApplications);
-router.get('/:id', authMiddleware, OSCPApplicationController.getOSCPApplicationById);
+// TODO: return Permit and Conversion Status only? 
+router.get('/:id', OSCPApplicationController.getOSCPApplicationById);
+
 router.put('/:id', authMiddleware, OSCPApplicationController.updateOSCPApplication);
 //router.delete('/oscpapplications/:id', auth, applicationController.deleteApplication);
 
 // No authentication 
-//router.post('/',s OSCPApplicationController.createOSCPApplication);
+//router.post('/', OSCPApplicationController.createOSCPApplication);
 //router.get('/', OSCPApplicationController.getOSCPApplications);
 //router.get('/:id', OSCPApplicationController.getOSCPApplicationById);
 //router.put('/:id', OSCPApplicationController.updateOSCPApplication);
