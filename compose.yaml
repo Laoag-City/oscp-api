@@ -1,0 +1,17 @@
+services:
+  dps-citations-api:
+    container_name: oscp-api
+    restart: always
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    external: true
+    name: api-network
