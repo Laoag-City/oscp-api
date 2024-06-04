@@ -15,12 +15,20 @@ require('dotenv').config();
 const app = express();
 app.use(cors())
 
-const port = process.env.PORT || 3001;
-//const MONGO_URI = '';
-
+//const port = process.env.PORT || 3001;
+const port = process.env.PORT || (process.env.NODE_ENV === 'production' ? 3081 : 3001);;
 app.use(bodyParser.json());
 
-mongoose.connect(process.env.MONGO_URI_DEV, {
+let mongoUri;
+
+// Choose appropriate MongoDB URI based on environment
+if (process.env.NODE_ENV === 'production') {
+  mongoUri = process.env.MONGO_URI_PROD;
+} else {
+  mongoUri = process.env.MONGO_URI_DEV;
+}
+
+mongoose.connect(mongoUri, {
 })
 .then(()=>{
   console.log(process.env.NODE_ENV);
