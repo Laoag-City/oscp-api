@@ -1,5 +1,5 @@
 services:
-  dps-citations-api:
+  oscp-api:
     container_name: oscp-api
     restart: always
     build: .
