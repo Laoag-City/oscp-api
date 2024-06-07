@@ -54,11 +54,5 @@ const OSCPApplicationSchema = new mongoose.Schema({
     },
   ]
 },{collection: 'oscpapplications'});
-/* const ApplicationSchema = new mongoose.Schema({
-  owner: String,
-  title: String,
-  dateApplied: Date,
-  signatories: [{ name: String }]
-});
-*/
+
 module.exports = mongoose.model('OSCPApplications', OSCPApplicationSchema);
