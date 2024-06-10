@@ -34,6 +34,18 @@ mongoose.connect(mongoUri, {
 app.use('/users', userRoutes);
 app.use('/oscpapplications',  OSCPRoutes)
 
-app.listen(port, () => {
-  console.log(`Server is up and running on port ${port}`);
+//Non https
+//app.listen(port, () => {
+//  console.log(`Server is up and running on port ${port}`);
+//});
+
+//https
+// Load TLS certificate and key
+const options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/your_domain/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/your_domain/fullchain.pem')
+};
+
+https.createServer(options, app).listen(port, () => {
+  console.log(`Server is up and running on port ${port} with TLS`);
 });
