@@ -8,8 +8,14 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - node-tls:/node-tls
     networks:
       - prod-network
+
+volumes:
+  node-tls:
+    name: node-tls
+    external: true
 
 networks:
   prod-network:
