@@ -14,8 +14,8 @@ services:
 
 volumes:
   node-tls:
-    name: node-tls
     external: true
+    name: node-tls
 
 networks:
   prod-network:

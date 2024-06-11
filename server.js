@@ -1,5 +1,7 @@
-const cors = require('cors');
+const fs = require('fs');
+const https = require('https');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
@@ -42,8 +44,10 @@ app.use('/oscpapplications',  OSCPRoutes)
 //https
 // Load TLS certificate and key
 const options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/your_domain/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/your_domain/fullchain.pem')
+  // key: fs.readFileSync('/etc/letsencrypt/live/your_domain/privkey.pem'),
+  // cert: fs.readFileSync('/etc/letsencrypt/live/your_domain/fullchain.pem')
+  cert: fs.readFileSync('/node-tls/fullchain.pem'),
+  key: fs.readFileSync('/node-tls/privkey.pem')
 };
 
 https.createServer(options, app).listen(port, () => {
