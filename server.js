@@ -1,40 +1,41 @@
-const fs = require('fs');
-const https = require('https');
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/userRoutes');
-const OSCPRoutes = require('./routes/OSCPApplicationRoutes');
+const fs = require("fs");
+const https = require("https");
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const userRoutes = require("./routes/userRoutes");
+const OSCPRoutes = require("./routes/OSCPApplicationRoutes");
 
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
-app.use(cors())
+app.use(cors());
 
-const port = process.env.PORT || (process.env.NODE_ENV === 'production' ? 3081 : 3001);;
+const port =
+  process.env.PORT || (process.env.NODE_ENV === "production" ? 3081 : 3001);
 app.use(bodyParser.json());
 
 let mongoUri;
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   mongoUri = process.env.MONGO_URI_PROD;
 } else {
   mongoUri = process.env.MONGO_URI_DEV;
 }
 
-mongoose.connect(mongoUri, {
-})
-.then(()=>{
-  console.log(process.env.NODE_ENV);
-  console.log('Connected to MongoDB');
-})
-.catch((err)=>{
-  console.error('Error connecting to MongoDB:', err.message)
-});
+mongoose
+  .connect(mongoUri, {})
+  .then(() => {
+    console.log(process.env.NODE_ENV);
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
+  });
 
-app.use('/users', userRoutes);
-app.use('/oscpapplications',  OSCPRoutes)
+app.use("/users", userRoutes);
+app.use("/oscpapplications", OSCPRoutes);
 
 //Non https
 //app.listen(port, () => {
@@ -46,8 +47,8 @@ app.use('/oscpapplications',  OSCPRoutes)
 const options = {
   // key: fs.readFileSync('/etc/letsencrypt/live/your_domain/privkey.pem'),
   // cert: fs.readFileSync('/etc/letsencrypt/live/your_domain/fullchain.pem')
-  cert: fs.readFileSync('/node-tls/fullchain.pem'),
-  key: fs.readFileSync('/node-tls/privkey.pem')
+  cert: fs.readFileSync("/node-tls/fullchain.pem"),
+  key: fs.readFileSync("/node-tls/privkey.pem"),
 };
 
 https.createServer(options, app).listen(port, () => {
