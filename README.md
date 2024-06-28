@@ -23,25 +23,23 @@ Getting Started
 
 To get started with the One Stop Construction Permit REST API, follow these steps:
 
-**Not implemented**
+    **Not implemented**
 
-Sign Up: Create an account on our platform to get access to the API.
+    Sign Up: Create an account on our platform to get access to the API.
 
-API Key: Once your account is created, generate an API key from the dashboard.
+    API Key: Once your account is created, generate an API key from the dashboard.
 
-Base URL: Use the following base URL for all API requests:
+    Base URL: Use the following base URL for all API requests:
 
-```sh
-https://apis.example.gov.ph/oscp/v1
-```
+## URL
+
+    https://apis.example.gov.ph/oscp/v1
 
 ## Authentication is via tokens (JWT)
 
 All API requests must include the API key in the request headers for authentication. The header should be formatted as follows:
 
-```makefile
-Authorization: Bearer YOUR_API_KEY
-```
+    Authorization: Bearer YOUR_API_KEY
 
 ## Endpoints
 
@@ -49,8 +47,6 @@ Authorization: Bearer YOUR_API_KEY
 
 #### Some are WIP's
 
-```makefile
- 
     ### Create a Permit Application
 
     POST /application
@@ -72,20 +68,16 @@ Authorization: Bearer YOUR_API_KEY
 
     DELETE /permits/:permit_id
     Response: Status message indicating the deletion status
-```
 
 #### Permit Status
 
-```makefile
     ### Get Permit Status
 
     GET /permits/{permit_id}/status
     Response: JSON object with the current status of the permit
-```
 
 #### Inspections
 
-```makefile
     ### Schedule an Inspection
 
     POST /inspections
@@ -96,12 +88,9 @@ Authorization: Bearer YOUR_API_KEY
 
     GET /inspections/{inspection_id}
     Response: JSON object with the inspection details
-```
 
 #### Payments
 
-
-```makefile
     ### Make a Payment
 
     POST /payments
@@ -112,12 +101,9 @@ Authorization: Bearer YOUR_API_KEY
 
     GET /payments/{payment_id}
     Response: JSON object with the payment details
-```
 
 #### Documents
 
-
-```makefile
     ### Upload a Document
 
     POST /documents
@@ -128,11 +114,9 @@ Authorization: Bearer YOUR_API_KEY
 
     GET /documents/{document_id}
     Response: JSON object with the document details
-```
 
 #### User Management
 
-```makefile
     ### Create a User
 
     POST /users
@@ -154,7 +138,6 @@ Authorization: Bearer YOUR_API_KEY
 
     DELETE /users/{user_id}
     Response: Status message indicating the deletion status
-```
 
 #### Error Handling
 
@@ -166,14 +149,15 @@ The API uses standard HTTP status codes to indicate the success or failure of an
     404 Not Found: The requested resource could not be found.
     500 Internal Server Error: An error occurred on the server.
 
-**Rate Limiting**
-    To ensure fair usage and prevent abuse, the API is rate-limited. The default rate limit is 1000 requests per hour. If the rate limit is exceeded, the API will return a 429 Too Many Requests status code.
+#### Rate Limiting
 
-**Changelog**
+To ensure fair usage and prevent abuse, the API is rate-limited. The default rate limit is 1000 requests per hour. If the rate limit is exceeded, the API will return a 429 Too Many Requests status code.
+
+#### Changelog
 
 v.0.1: Initial release of the One Stop Construction Permit REST API.
 
-**Contributing**
+#### Contributing
 
 We welcome contributions to improve the API! Please follow these steps to contribute:
 
@@ -184,7 +168,7 @@ Fork the repository.
 - Push your changes to your fork.
 - Submit a pull request to the main repository.
 
-**License**
+#### License
 
 This API is licensed under the MIT License. See the LICENSE file for more details.
 
