@@ -9,6 +9,7 @@ router.get('/', authMiddleware, OSCPApplicationController.getOSCPApplications);
 router.get('/:id', OSCPApplicationController.getOSCPApplicationById);
 
 router.put('/:id', authMiddleware, OSCPApplicationController.updateOSCPApplication);
+router.patch('/:id', authMiddleware, OSCPApplicationController.patchOSCPApplication);
 //router.delete('/oscpapplications/:id', auth, applicationController.deleteApplication);
 
 // No authentication 
